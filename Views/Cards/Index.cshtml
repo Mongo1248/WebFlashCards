@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebFlashCards.Models.Card>
+
+@if (Model != null && Model.Any())
+{
+
+    ViewData["Title"] = "Index";
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnswerText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionMedia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionMediaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnswerMedia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnswerMediaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerUserID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionMedia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionMediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerMedia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerMediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerUserID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CardID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CardID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CardID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <p>No cards available.</p>
+}

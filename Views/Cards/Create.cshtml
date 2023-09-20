@@ -1,0 +1,63 @@
+﻿@model WebFlashCards.Models.Card
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Card</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuestionText" class="control-label"></label>
+                <input asp-for="QuestionText" class="form-control" />
+                <span asp-validation-for="QuestionText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerText" class="control-label"></label>
+                <input asp-for="AnswerText" class="form-control" />
+                <span asp-validation-for="AnswerText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionMedia" class="control-label"></label>
+                <input asp-for="QuestionMedia" class="form-control" />
+                <span asp-validation-for="QuestionMedia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionMediaType" class="control-label"></label>
+                <input asp-for="QuestionMediaType" class="form-control" />
+                <span asp-validation-for="QuestionMediaType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerMedia" class="control-label"></label>
+                <input asp-for="AnswerMedia" class="form-control" />
+                <span asp-validation-for="AnswerMedia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerMediaType" class="control-label"></label>
+                <input asp-for="AnswerMediaType" class="form-control" />
+                <span asp-validation-for="AnswerMediaType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerUserID" class="control-label"></label>
+                <input asp-for="OwnerUserID" class="form-control" />
+                <span asp-validation-for="OwnerUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

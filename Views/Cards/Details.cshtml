@@ -1,0 +1,60 @@
+﻿@model WebFlashCards.Models.Card
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Card</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuestionText)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuestionText)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnswerText)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnswerText)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuestionMedia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuestionMedia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuestionMediaType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuestionMediaType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnswerMedia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnswerMedia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnswerMediaType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnswerMediaType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnerUserID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OwnerUserID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CardID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
